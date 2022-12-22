@@ -1,6 +1,6 @@
 
-// 105. EXPRESS basado en clases y 
-// 106. Peticiones HTTP / GET / PUT / POST / DELETE
+// Sección 8 => 105. EXPRESS basado en clases y 
+// Sección 8 => 106. Peticiones HTTP / GET / PUT / POST / DELETE
 
 /*
 const express = require('express');
@@ -66,8 +66,8 @@ class Server {
 module.exports = Server;
 */
 
-// 109. CORS - Middleware y 
-// 110. Separar las rutas y controlador de la clase
+// Sección 8 => 109. CORS - Middleware y 
+// Sección 8 => 110. Separar las rutas y controlador de la clase
 
 /*
 const express = require('express');
@@ -110,8 +110,9 @@ class Server {
 module.exports = Server;
 */
 
-// 111. Obtener datos de un POST
+// Sección 8 => 111. Obtener datos de un POST
 
+/*
 const express = require('express');
 const cors = require('cors');
 
@@ -153,4 +154,56 @@ class Server {
 }
 
 module.exports = Server;
+*/
 
+// Sección 9 => 124. Mongoose - Conectarnos a la base de datos
+
+const express = require('express');
+const cors = require('cors');
+const { dbConnection } = require('../database/config');
+
+class Server {
+
+    constructor() {
+        this.app = express();
+        this.port = process.env.PORT;
+        this.usuariosPath = '/api/usuarios';
+
+        // Coneccion a la Database
+        this.conectarDB();
+
+        // MiddleWares
+        this.middlewares();
+
+        // Ruras de la aplicacion
+        this.routes();
+    }
+
+    async conectarDB() {
+        await dbConnection();
+    }
+
+    middlewares() {
+
+        // CORS
+        this.app.use( cors() );
+
+        // Lectura y parseo de body
+        this.app.use( express.json( ));
+
+        // Directorio Público
+        this.app.use( express.static('public') );
+    }
+
+    routes() {
+        this.app.use(this.usuariosPath, require('../routes/usuarios'));
+    }
+
+    listen() {
+        this.app.listen( this.port, () => {
+            console.log('Servidor corriendo en el puerto:', this.port );
+        });
+    }
+}
+
+module.exports = Server;
