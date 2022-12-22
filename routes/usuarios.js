@@ -1,6 +1,5 @@
 
-// 110. Separar las rutas y controlador de la clase y
-// 112. Paárametros de segmento y query
+//  Separar las rutas y controlador de la clase Párametros del segmento y query
 
 const { Router } = require('express');
 const { 
