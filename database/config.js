@@ -9,9 +9,9 @@ const dbConnection = async() => {
 
         await mongoose.connect( process.env.MONGODB_CNN, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
-            //useCreateIndex: true,
-            //useFindAndModify: false
+            useUnifiedTopology: true,
+            useCreateIndex: true,       // Estas 2 funciones estan fuera de servicio
+            useFindAndModify: false     // en la version superior de Mongoose
        });
 
         console.log('Base de datos Online');
