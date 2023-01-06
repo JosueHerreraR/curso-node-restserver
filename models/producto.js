@@ -1,6 +1,5 @@
 
-// Sección 12 => 181. Modelo de producto y rutas &
-// Sección 13 => 199. Actualizar imagen del usu
+// Sección 13 => 199. Actualizar imagen del usuario
 
 const { Schema, model } = require('mongoose');
 
