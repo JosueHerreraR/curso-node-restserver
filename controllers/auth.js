@@ -1,24 +1,5 @@
 
-// Sección 10 => 147. Crear ruta de autenticación - Auth - Login
-
-/*
-const { response } = require("express");
-
-const login = (req, res = response) =>{
-
-
-    res.json({
-        msg: 'Login Ok'
-    })
-}
-
-module.exports = {
-    login
-}
-*/
-
-// Sección 10 => 148. Login del usuario y 
-// Sección 10 => 149. Generar un JWT 
+// Sección 10 => 148. Login del usuario y 149. Generar un JWT 
 
 const { response } = require('express');
 const bcryptis = require('bcryptjs')
