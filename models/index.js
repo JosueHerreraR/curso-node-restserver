@@ -1,5 +1,4 @@
 
-// Sección 12 => 176. Modelo categoría y 
 // Sección 12 => 181. Modelo de producto y rutas
 
 const Categoria = require('./categoria');
