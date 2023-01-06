@@ -1,43 +1,5 @@
 
-// Sección 12 => 177. Crear una categoría
-
-/*
-const { response } = require("express");
-const { Categoria } = require('../models');
-
-const crearCategorias = async( req, res = response ) => {
-
-    const nombre = req.body.nombre.toUpperCase();
-    const categoriaDB = await Categoria.findOne({nombre})
-
-    if ( categoriaDB ) {
-        return res.status(400).json({
-            msg: `La categoria ${categoriaDB.nombre} ya esta registrada`
-        });
-    }
-
-    // Generar la data a guardar
-    const data = {
-        nombre,
-        usuario: req.usuario._id
-    }
-
-    const categoria = new Categoria ( data );
-
-    // Guardar en DB
-    await categoria.save();
-
-    res.status(201).json(categoria);
-}
-
-module.exports = {
-    crearCategorias
-}
-*/
-
-// Sección 12 => 178. Tarea - CRUD de Categorias y
-// Sección 12 => 179. Resolución de la Tarea - CRUD de Categorias y
-// Sección 12 => 180. Resolución de la Tarea - CRUD de Categorias - Parte 2 
+// Sección 12 => 178 - 180. - CRUD de Categorias - Parte 2 
 
 const { response } = require("express");
 const { Categoria } = require('../models');
